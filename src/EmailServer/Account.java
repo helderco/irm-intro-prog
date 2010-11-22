@@ -150,6 +150,7 @@ public class Account {
      * @return     objecto Message se pos válido; null caso contrário.
      */
     Message getMessage(int pos) {
+        readPointer = pos;
         return (pos >= 0 && pos < msgPointer) ? inbox[pos] : null;
     }
 
@@ -184,7 +185,7 @@ public class Account {
      *
      * @return  objecto Message
      */
-    private Message read() {
+    public Message read() {
         return inbox[readPointer];
     }
 

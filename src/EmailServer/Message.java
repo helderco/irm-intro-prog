@@ -55,6 +55,11 @@ public class Message {
         return body;
     }
 
+    /** Retorna o cabeçalho para a listagem de mensagens */
+    public static String listHeader() {
+        return String.format(" Nr. %-20s Assunto", "Remetente");
+    }
+
     /**
      * Sumário representante de uma mensagem, para ser usado como
      * entrada numa lista de mensagens.
@@ -64,7 +69,7 @@ public class Message {
      *               um elemento da list
      */
     public String toHeaderString(int msgnr) {
-        return String.format("%-3d. %20s %s", from, subject);
+        return String.format("%3d. %-20s %s", msgnr, from, subject);
     }
 
     /**
@@ -77,7 +82,7 @@ public class Message {
         return "\nRemetente: " + from
              + "\nDestinatário: " + to
              + "\nAssunto: " + subject
-             + "\nBody: " + body
+             + "\nMensagem: " + body
              + "\n";
     }
 
