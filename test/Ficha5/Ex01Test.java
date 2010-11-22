@@ -21,11 +21,18 @@ public class Ex01Test {
     public static void tearDownClass() throws Exception {}
 
     @Test
-    public void testReverse() {
+    public void testReverseOnEvenArray() {
         assertArrayEquals(
-            new int[] {67, 3, 14, 2, 7, 5, 5, 1},
-            Ex01.reverse(new int[] {1, 5, 5, 7, 2, 14, 3, 67})
+            new int[] {68, 8, 19, 9},
+            Ex01.implosionSum(new int[] {1, 5, 5, 7, 2, 14, 3, 67})
         );
     }
 
+    @Test
+    public void testReverseOnOddArray() {
+        assertArrayEquals(
+            new int[] {68, 8, 19, 9, 6},
+            Ex01.implosionSum(new int[] {1, 5, 5, 7, 3, 2, 14, 3, 67})
+        );
+    }
 }

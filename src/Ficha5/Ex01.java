@@ -27,16 +27,16 @@ public class Ex01 {
             list[i] = input.nextInt();
         }
 
-        int[] reversed = reverse(list);
-
-        Utils.printArray(reversed);
+        Utils.printArray(implosionSum(list));
     }
 
-    public static int[] reverse(int[] list) {
-        int[] reverse = new int[list.length];
-        for (int i = 0, j = list.length-1; i < list.length; i++, j--)
-            reverse[i] = list[j];
-            
-        return reverse;
+    public static int[] implosionSum(int[] list) {
+        int[] result = new int[list.length/2+list.length%2];
+
+        for (int j, i = 0; i < result.length; i++) {
+            result[i] = list[i]+list[list.length-1-i];
+        }
+
+        return result;
     }
 }
