@@ -67,7 +67,7 @@ public class AgendaDinamica {
     }
 
 
-    private static Vector<Contacto> carregaContactos() {
+    public static Vector<Contacto> carregaContactos() {
 
         Contacto.initContaNum(0);
         Vector<Contacto> aux=new Vector<Contacto>();
@@ -109,7 +109,7 @@ public class AgendaDinamica {
         }
     }
 
-    private static void guardaContactos(Vector<Contacto> ag) {
+    public static void guardaContactos(Vector<Contacto> ag) {
 
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter("contactos.txt"));
